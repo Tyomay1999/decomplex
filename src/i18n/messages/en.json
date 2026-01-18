@@ -1,0 +1,20 @@
+{
+  "seo": {
+    "title": "DeComplex Platform - Full-Stack Architecture Showcase (Web, Mobile, Admin, Backend)",
+    "description": "DeComplex is a public full-stack showcase platform built to demonstrate real engineering skills and architecture. Since prior commercial work is under NDA, this platform provides a transparent, production-style reference across web, admin, React Native mobile, and a scalable backend."
+  },
+  "nav": {
+    "home": "Home",
+    "mobile": "Mobile App",
+    "web": "Web App",
+    "backend": "Backend Site",
+    "admin": "Admin Site"
+  },
+  "page": {
+    "home": "Home route in English",
+    "mobile": "Mobile app route in English",
+    "web": "Web app route in English",
+    "backend": "Backend site route in English",
+    "admin": "Admin site route in English"
+  }
+}
