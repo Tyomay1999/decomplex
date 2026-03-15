@@ -1,20 +1,810 @@
 {
   "seo": {
     "title": "DeComplex - Full-Stack платформа (Web, Mobile, Admin, Backend)",
-    "description": "DeComplex - публичная full-stack демонстрационная платформа, созданная для показа инженерных навыков и архитектуры. Поскольку коммерческие проекты, над которыми я работал, находятся под NDA и не могут быть показаны, эта платформа служит открытым production-style примером: веб-приложение, админ-панель, React Native мобильное приложение и масштабируемый backend."
+    "description": "DeComplex - публичная full-stack инженерная демонстрационная платформа, созданная для показа инженерных навыков и архитектуры. Поскольку коммерческие проекты, над которыми я работал, находятся под NDA и не могут быть показаны, эта платформа служит открытым production-style примером: веб-приложение, админ-панель, React Native мобильное приложение и масштабируемый backend."
   },
   "nav": {
-    "home": "Главная",
-    "mobile": "Мобильное приложение",
-    "web": "Веб-приложение",
-    "backend": "Бэкенд",
-    "admin": "Админ"
+    "overview": "Обзор",
+    "web": "Бэкенд",
+    "admin": "Админ",
+    "mobile": "Мобайл",
+    "backend": "Мобайл",
+    "infra": "Инфра"
   },
-  "page": {
-    "home": "Главный роут на русском",
-    "mobile": "Роут mobileapp на русском",
-    "web": "Роут webapp на русском",
-    "backend": "Роут backend-site на русском",
-    "admin": "Роут admin-site на русском"
+  "preferences": {
+    "title": "Настройки",
+    "language": "Язык",
+    "theme": "Тема",
+    "light": "Светлая",
+    "dark": "Тёмная",
+    "system": "Системная"
+  },
+  "overview": {
+    "hero": {
+      "title": "Обзор платформы",
+      "description": "DeComplex - это модульная платформа production-уровня, созданная для демонстрации сквозной архитектуры платформы, масштабируемого дизайна сервисов и реальных инженерных практик. Она представляет собой единую демонстрационную платформу веб, мобильных, серверных и инфраструктурных компонентов, работающих как целостная система."
+    },
+    "architecture": {
+      "title": "Архитектура системы",
+      "inputs": {
+        "webApp": "Веб-приложение",
+        "adminConsole": "Административная панель",
+        "mobileSdk": "Мобильное приложение"
+      },
+      "corePlatform": "Ядро платформы",
+      "processingEngine": "Движок обработки",
+      "processingPills": {
+        "eventProcessing": "Обработка событий",
+        "stateManagement": "Сервисная логика",
+        "orchestration": "Бизнес-процессы"
+      },
+      "outputs": {
+        "apiServices": "API-сервисы",
+        "dataLayer": "Слой данных"
+      },
+      "infrastructureFoundation": "Инфраструктурный фундамент",
+      "infrastructure": {
+        "compute": "Вычисления",
+        "storage": "Хранилище",
+        "network": "Сеть",
+        "security": "Безопасность"
+      }
+    },
+    "documentationModules": {
+      "title": "Модули документации",
+      "cards": {
+        "webApp": {
+          "title": "Веб-приложение",
+          "description": "Публичный веб-интерфейс для просмотра вакансий, аутентификации и отправки откликов с резюме и сопроводительным письмом."
+        },
+        "adminConsole": {
+          "title": "Административная панель",
+          "description": "Административный интерфейс для управления пользователями, ролями, вакансиями и откликами кандидатов."
+        },
+        "mobileSdk": {
+          "title": "Мобильное приложение",
+          "description": "React Native приложение на базе Expo, повторяющее логику Web App и доступное как веб-версия и Android-сборка."
+        },
+        "backendServices": {
+          "title": "Бэкенд-сервис",
+          "description": "REST API для аутентификации, бизнес-логики, работы с данными и интеграции со всеми клиентскими приложениями."
+        },
+        "infrastructure": {
+          "title": "Инфраструктура",
+          "description": "Контейнеризованный деплой, CI-пайплайны, автоматизированное тестирование и операционная инфраструктура."
+        }
+      }
+    },
+    "metrics": {
+      "title": "Инженерные особенности",
+      "items": {
+        "testCoverage": "Unit, Integration и E2E тесты",
+        "containerization": "Полная контейнеризация сервисов",
+        "ciPipeline": "Автоматизированные CI-пайплайны",
+        "architecture": "Модульная и масштабируемая архитектура"
+      }
+    }
+  },
+  "webApp": {
+    "page": {
+      "breadcrumb": {
+        "documentation": "Документация",
+        "current": "Веб-приложение"
+      },
+      "title": "Веб-приложение",
+      "description": "Пользовательский веб-интерфейс, позволяющий кандидатам публичный просмотр вакансий, проходить аутентификацию для доступа к деталям вакансий и отправлять отклики с сопроводительным письмом и резюме. Поддерживает мультиязычность и сессионную аутентификацию."
+    },
+    "keyFeatures": {
+      "title": "Ключевые возможности",
+      "items": {
+        "vacancyBrowsing": {
+          "title": "Просмотр вакансий",
+          "description": "Публичный доступ к списку вакансий с базовой информацией без необходимости авторизации."
+        },
+        "authenticationFlow": {
+          "title": "Аутентификация",
+          "description": "Регистрация и вход в систему обязательны для просмотра детальной информации и отклика на вакансии."
+        },
+        "vacancyDetails": {
+          "title": "Детали вакансии",
+          "description": "Детальные страницы вакансий доступны авторизованным пользователям и содержат полное описание и требования."
+        },
+        "applicationSubmission": {
+          "title": "Отправка отклика",
+          "description": "Возможность отправки отклика на вакансию с сопроводительным письмом и прикреплённым резюме."
+        }
+      }
+    },
+    "techStack": {
+      "title": "Технологический стек"
+    },
+    "architectureNotes": {
+      "title": "Архитектурные особенности",
+      "items": {
+        "componentBased": {
+          "title": "Компонентная архитектура",
+          "description": "- Модульные UI-компоненты с разделением ответственности и переиспользуемыми паттернами."
+        },
+        "authAndProtectedAccess": {
+          "title": "Аутентификация и ограничение доступа",
+          "description": "- Просмотр списка вакансий доступен публично, а детали вакансий и отправка отклика требуют авторизации."
+        },
+        "localizationTheming": {
+          "title": "Локализация и темы",
+          "description": "- Мультиязычность через next-intl и переключение темы через next-themes."
+        },
+        "centralizedApi": {
+          "title": "Интеграция с API",
+          "description": "- Единый подход к обработке запросов и ошибок во всех пользовательских сценариях."
+        },
+        "testingCoverage": {
+          "title": "Покрытие тестами",
+          "description": "- Unit, integration и end-to-end тесты покрывают критические сценарии (аутентификация, детали вакансии, отправка отклика)."
+        }
+      }
+    },
+    "requestFlow": {
+      "title": "Поток запросов",
+      "nodes": {
+        "webApp": "Веб-приложение",
+        "auth": "Аутентификация",
+        "vacancies": "Вакансии",
+        "applications": "Заявки",
+        "apiGateway": "Шлюз API",
+        "backendServices": "Бэкенд-сервис"
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Переключайтесь между local, Docker, demo и production сценариями, чтобы увидеть, как веб-приложение запускается, поднимается для предпросмотра и выпускается.",
+      "tags": {
+        "nextjs": "Next.js",
+        "local": "Local",
+        "docker": "Docker",
+        "production": "Production",
+        "node": "Node.js",
+        "devServer": "Dev Server",
+        "compose": "Docker Compose",
+        "webRuntime": "Web Runtime",
+        "demo": "Demo",
+        "preview": "Preview",
+        "staticOutput": "Static Output",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Запуск веб-приложения локально через стандартный development server workflow.",
+          "lines": {
+            "comment": "Локальная web development среда",
+            "output1": "[✓] Запуск development server...",
+            "success": "Веб-приложение готово"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Запуск веб-приложения через контейнеризированные сервисы и runtime-зависимости.",
+          "lines": {
+            "comment": "Containerized web environment",
+            "output1": "[✓] Сборка Docker images...",
+            "output2": "[✓] Запуск web runtime...",
+            "success": "Docker environment готов"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Запуск preview-oriented deployment flow для demo и validation environments.",
+          "lines": {
+            "comment": "Demo web deployment",
+            "output1": "[✓] Подготовка preview build...",
+            "output2": "[✓] Публикация demo target...",
+            "success": "Demo deployment завершён"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Использование release workflow для сборки и деплоя production web target.",
+          "lines": {
+            "comment": "Production web deployment",
+            "output1": "[✓] Запуск validation pipeline...",
+            "output2": "[✓] Сборка production artifacts...",
+            "output3": "[✓] Деплой web target...",
+            "success": "Production deployment завершён"
+          }
+        }
+      }
+    }
+  },
+  "adminConsole": {
+    "page": {
+      "breadcrumb": {
+        "documentation": "Документация",
+        "current": "Административная панель"
+      },
+      "title": "Административная панель",
+      "description": "Интерфейс администрирования платформы, предназначенный для управления пользователями, ролями, вакансиями и откликами кандидатов. Реализует ролевую модель доступа для администраторов компаний и рекрутеров."
+    },
+
+    "keyFeatures": {
+      "title": "Ключевые возможности",
+      "items": {
+        "roleManagement": {
+          "title": "Ролевой доступ",
+          "description": "Разграничение прав доступа между администраторами компаний и рекрутерами с заранее определёнными разрешениями."
+        },
+        "userManagement": {
+          "title": "Управление пользователями",
+          "description": "Создание и управление пользователями компании, включая администраторов и рекрутеров."
+        },
+        "vacancyManagement": {
+          "title": "Управление вакансиями",
+          "description": "Создание, редактирование и публикация вакансий авторизованными пользователями."
+        },
+        "applicationReview": {
+          "title": "Просмотр откликов",
+          "description": "Просмотр откликов кандидатов с доступом к загруженным резюме и сопроводительным письмам."
+        }
+      }
+    },
+
+    "techStack": {
+      "title": "Технологический стек"
+    },
+
+    "architectureNotes": {
+      "title": "Архитектурные примечания",
+      "items": {
+        "roleSeparation": {
+          "title": "Разделение ролей",
+          "description": "- Чёткое разделение прав доступа между администраторами компаний и рекрутерами."
+        },
+        "centralizedApi": {
+          "title": "Интеграция API",
+          "description": "- Централизованное API-взаимодействие для управления пользователями, вакансиями и откликами."
+        },
+        "testingCoverage": {
+          "title": "Покрытие тестами",
+          "description": "- Юнит, интеграционные и end-to-end тесты покрывают основные административные сценарии."
+        }
+      }
+    },
+
+    "requestFlow": {
+      "title": "Поток запросов",
+      "nodes": {
+        "adminConsole": "Административная панель",
+        "management": "Управление данными",
+        "apiGateway": "Шлюз API",
+        "backendServices": "Бэкенд-сервис"
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Переключайтесь между local, Docker, demo и production сценариями, чтобы увидеть, как admin panel запускается, поднимается для предпросмотра и доставляется в целевые окружения.",
+      "tags": {
+        "react": "React",
+        "vite": "Vite",
+        "local": "Local",
+        "docker": "Docker",
+        "node": "Node.js",
+        "devServer": "Dev Server",
+        "compose": "Docker Compose",
+        "nginx": "Nginx",
+        "demo": "Demo",
+        "preview": "Preview",
+        "dashboard": "Dashboard",
+        "production": "Production",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Локальный запуск admin panel через стандартный Vite development workflow.",
+          "lines": {
+            "comment": "Локальная admin development среда",
+            "output1": "[✓] Запуск Vite dev server...",
+            "success": "Admin panel готова"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Запуск admin panel через контейнеризированный build и runtime pipeline.",
+          "lines": {
+            "comment": "Containerized admin environment",
+            "output1": "[✓] Сборка Docker images...",
+            "output2": "[✓] Запуск Nginx runtime...",
+            "success": "Docker environment готов"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Использование demo deployment flow для preview dashboard-сред и validation environments.",
+          "lines": {
+            "comment": "Demo admin deployment",
+            "output1": "[✓] Сборка preview dashboard...",
+            "output2": "[✓] Публикация demo target...",
+            "success": "Demo deployment завершён"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Использование release workflow для подготовки и деплоя production admin target.",
+          "lines": {
+            "comment": "Production admin deployment",
+            "output1": "[✓] Запуск validation pipeline...",
+            "output2": "[✓] Сборка release artifacts...",
+            "output3": "[✓] Деплой admin target...",
+            "success": "Production deployment завершён"
+          }
+        }
+      }
+    }
+  },
+  "mobileSdk": {
+    "page": {
+      "breadcrumb": {
+        "documentation": "Документация",
+        "current": "Мобильное приложение"
+      },
+      "title": "Мобильное приложение",
+      "description": "Кроссплатформенное приложение на React Native и Expo. Публично доступно как web-версия и Android-сборка. iOS поддерживается для разработки/тестирования через Expo Go (QR), без публикации в App Store. Повторяет пользовательские сценарии Web App: просмотр вакансий, аутентификация и отправка заявки с сопроводительным письмом и загрузкой резюме."
+    },
+
+    "keyFeatures": {
+      "title": "Ключевые возможности",
+      "items": {
+        "vacancyBrowsing": {
+          "title": "Просмотр вакансий",
+          "description": "Публичный доступ к списку вакансий, а детальный просмотр и отклик доступны после аутентификации."
+        },
+        "authenticationFlow": {
+          "title": "Аутентификация",
+          "description": "Регистрация и логин с токен-сессиями для доступа к защищённым действиям."
+        },
+        "applicationSubmission": {
+          "title": "Отправка заявки",
+          "description": "Отклик с сопроводительным письмом и прикреплением файла резюме через document picker."
+        },
+        "localSessionStorage": {
+          "title": "Локальное хранение сессии",
+          "description": "Сохранение fingerprint и токенов через AsyncStorage и secure storage для чувствительных значений."
+        }
+      }
+    },
+
+    "techStack": {
+      "title": "Технологический стек"
+    },
+
+    "architectureNotes": {
+      "title": "Архитектурные примечания",
+      "items": {
+        "expoCrossPlatform": {
+          "title": "Кроссплатформенная доставка через Expo",
+          "description": "- Единая кодовая база: web-сборка и native Android; iOS доступен для dev/test через Expo Go."
+        },
+        "stateAndApi": {
+          "title": "Управление состоянием и загрузка данных",
+          "description": "- Redux Toolkit с RTK Query для взаимодействия с сервером и управления жизненным циклом запросов."
+        },
+        "localization": {
+          "title": "Локализация",
+          "description": "- Мультиязычный интерфейс на i18next с поддержкой локали устройства."
+        },
+        "testingCoverage": {
+          "title": "Покрытие тестами",
+          "description": "- Unit/integration тесты на Jest и end-to-end тесты Playwright для web-экспорта."
+        }
+      }
+    },
+
+    "requestFlow": {
+      "title": "Поток взаимодействия",
+      "nodes": {
+        "mobileApp": "Мобильное приложение",
+        "clientState": "Локальное состояние",
+        "auth": "Сервис аутентификации",
+        "vacancies": "Сервис вакансий",
+        "applications": "Сервис откликов",
+        "apiGateway": "Шлюз API",
+        "backendServices": "Бэкенд-сервисы"
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Переключайтесь между local, Docker, demo и production сценариями, чтобы увидеть, как мобильный модуль запускается, поднимается для предпросмотра и выпускается.",
+      "tags": {
+        "expo": "Expo",
+        "android": "Android",
+        "local": "Local",
+        "docker": "Docker",
+        "node": "Node.js",
+        "compose": "Docker Compose",
+        "sharedServices": "Shared Services",
+        "demo": "Demo",
+        "preview": "Preview",
+        "apk": "APK",
+        "production": "Production",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Запуск мобильного приложения напрямую через локальный Expo development workflow.",
+          "lines": {
+            "comment": "Локальная мобильная разработка через Expo",
+            "output1": "[✓] Запуск Metro bundler...",
+            "success": "Сервер разработки готов"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Подъём mobile-related сервисов через контейнеризированную инфраструктуру и общие зависимости.",
+          "lines": {
+            "comment": "Контейнеризированная mobile environment",
+            "output1": "[✓] Сборка Docker images...",
+            "output2": "[✓] Запуск shared services...",
+            "success": "Docker environment готов"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Запуск demo-oriented mobile flow для preview environments и распространяемых сборок.",
+          "lines": {
+            "comment": "Demo mobile deployment",
+            "output1": "[✓] Подготовка preview assets...",
+            "output2": "[✓] Публикация demo build...",
+            "success": "Demo deployment завершён"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Использование production release workflow для подготовки и деплоя мобильной цели в финальные окружения.",
+          "lines": {
+            "comment": "Production mobile deployment",
+            "output1": "[✓] Запуск validation pipeline...",
+            "output2": "[✓] Сборка release artifacts...",
+            "output3": "[✓] Деплой production target...",
+            "success": "Production deployment завершён"
+          }
+        }
+      }
+    }
+  },
+  "backendServices": {
+    "page": {
+      "breadcrumb": {
+        "documentation": "Документация",
+        "current": "Бэкенд-сервис"
+      },
+      "title": "Бэкенд-сервис",
+      "description": "Бэкенд-API платформы DeComplex. Обеспечивает REST-интерфейсы, аутентификацию и авторизацию, реализацию бизнес-логики и интеграционные механизмы для Web App, Admin Console и Mobile App."
+    },
+    "keyFeatures": {
+      "title": "Ключевые возможности",
+      "items": {
+        "restApi": {
+          "title": "REST API",
+          "description": "REST-эндпоинты на Express с понятной структурой роутов и единым поведением запросов/ответов."
+        },
+        "auth": {
+          "title": "Аутентификация и доступы",
+          "description": "JWT-аутентификация и ролевой доступ для компаний, админов и рекрутеров."
+        },
+        "databaseMigrations": {
+          "title": "PostgreSQL + миграции",
+          "description": "Модели Sequelize, миграции и сиды для воспроизводимых окружений и контролируемого изменения схемы."
+        },
+        "integrationsDocs": {
+          "title": "Интеграции и документация API",
+          "description": "Redis для кэширования и служебных задач, опционально RabbitMQ для асинхронных задач, Swagger/OpenAPI для описания эндпоинтов."
+        }
+      }
+    },
+    "techStack": {
+      "title": "Технологический стек"
+    },
+    "architectureNotes": {
+      "title": "Примечания по архитектуре",
+      "items": {
+        "modularApi": {
+          "title": "Модульный API",
+          "description": "- Фиче-ориентированные модули с изолированными роутами, валидацией и сервисной логикой."
+        },
+        "dataAccess": {
+          "title": "Слой доступа к данным",
+          "description": "- Персистентность через Sequelize, явные миграции и предсказуемые паттерны запросов."
+        },
+        "operability": {
+          "title": "Безопасность и наблюдаемость",
+          "description": "- Helmet, CORS, валидация (Joi) и структурные логи (Pino) для безопасной и трассируемой работы."
+        }
+      }
+    },
+    "serviceArchitecture": {
+      "title": "Компонентная архитектура бэкенда",
+      "boxes": {
+        "apiServer": "HTTP-слой API (Express)",
+        "authModule": "Модуль авторизации",
+        "vacanciesModule": "Модуль вакансий",
+        "applicationsModule": "Модуль откликов",
+        "adminModule": "Управление компанией/пользователями",
+        "email": "Email (Nodemailer)"
+      },
+      "mq": "Очередь сообщений (RabbitMQ, опционально)",
+      "stores": {
+        "postgres": "PostgreSQL (Sequelize)",
+        "redisCache": "Redis (кэш и вспомогательные процессы)"
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Переключайтесь между local, Docker, demo и production сценариями, чтобы увидеть, как backend services и их зависимости запускаются и деплоятся.",
+      "tags": {
+        "node": "Node.js",
+        "postgresql": "PostgreSQL",
+        "redis": "Redis",
+        "rabbitmq": "RabbitMQ",
+        "migrations": "Migrations",
+        "api": "API",
+        "docker": "Docker",
+        "compose": "Docker Compose",
+        "sharedServices": "Shared Services",
+        "demo": "Demo",
+        "preview": "Preview",
+        "production": "Production",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Локальный запуск backend services с миграциями и development server workflow.",
+          "lines": {
+            "comment": "Локальная backend development среда",
+            "output1": "[✓] Запуск backend API server...",
+            "success": "Backend service готов"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Запуск backend services и общих runtime-зависимостей через контейнеры.",
+          "lines": {
+            "comment": "Containerized backend environment",
+            "output1": "[✓] Сборка Docker images...",
+            "output2": "[✓] Запуск databases и brokers...",
+            "output3": "[✓] Запуск backend services...",
+            "success": "Docker environment готов"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Использование demo deployment flow для backend preview и validation environments.",
+          "lines": {
+            "comment": "Demo backend deployment",
+            "output1": "[✓] Подготовка preview backend target...",
+            "output2": "[✓] Публикация demo services...",
+            "success": "Demo deployment завершён"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Использование release workflow для сборки, валидации и деплоя production backend services.",
+          "lines": {
+            "comment": "Production backend deployment",
+            "output1": "[✓] Запуск validation pipeline...",
+            "output2": "[✓] Сборка service artifacts...",
+            "output3": "[✓] Деплой backend services...",
+            "success": "Production deployment завершён"
+          }
+        }
+      }
+    }
+  },
+  "infrastructure": {
+    "breadcrumb": {
+      "documentation": "Документация",
+      "current": "Инфраструктура и эксплуатация"
+    },
+    "header": {
+      "title": "Инфраструктура и эксплуатация",
+      "lead": "Контейнерная среда запуска и CI/CD процесс для DeComplex. Описывает изоляцию сервисов, reverse proxy/load balancing, тестовые окружения и выпуск production-образов."
+    },
+    "deploymentModel": {
+      "title": "Модель деплоя",
+      "cards": {
+        "containerizedServices": {
+          "title": "Контейнеризованные сервисы",
+          "description": "Все компоненты запускаются в изолированных Docker-контейнерах: Web App, Admin, Mobile, Backend, PostgreSQL, Redis и RabbitMQ."
+        },
+        "reverseProxyAndLb": {
+          "title": "Reverse Proxy и балансировка",
+          "description": "Входная точка на базе Nginx маршрутизирует трафик к сервисам и может распределять запросы между несколькими инстансами бэкенда."
+        },
+        "e2eTestEnvironments": {
+          "title": "E2E тестовые окружения",
+          "description": "Отдельные E2E-композиции поднимают тестовые контейнеры, проверяют критические сценарии (включая LB-поведение) и удаляются после завершения."
+        },
+        "automatedDelivery": {
+          "title": "Автоматизированный выпуск",
+          "description": "CI выполняет сборку, запускает unit/integration и E2E тесты, после успешной проверки создаёт production-образы."
+        }
+      }
+    },
+    "technologyStack": {
+      "title": "Технологический стек",
+      "items": {
+        "docker": "Docker",
+        "dockerCompose": "Docker Compose",
+        "nginx": "Nginx (Reverse Proxy / Балансировщик)",
+        "postgres": "PostgreSQL",
+        "redis": "Redis",
+        "rabbitmqOptional": "RabbitMQ (опционально)",
+        "ci": "CI автоматизация (GitHub Actions / Webhooks)",
+        "playwright": "Playwright (E2E)",
+        "jest": "Jest (Unit/Integration)",
+        "vitest": "Vitest (тестирование фронтенда)"
+      }
+    },
+    "layers": {
+      "title": "Слои инфраструктуры",
+      "items": {
+        "edge": {
+          "title": "Edge слой",
+          "pills": {
+            "nginx": "Nginx",
+            "reverseProxy": "Reverse Proxy",
+            "loadBalancing": "Балансировка"
+          }
+        },
+        "runtime": {
+          "title": "Runtime слой",
+          "pills": {
+            "docker": "Docker",
+            "dockerCompose": "Docker Compose",
+            "serviceNetworking": "Сетевое взаимодействие"
+          }
+        },
+        "application": {
+          "title": "Прикладной слой",
+          "pills": {
+            "webApp": "Web App",
+            "adminConsole": "Admin Console",
+            "mobileApp": "Mobile App",
+            "backendApi": "Backend API"
+          }
+        },
+        "data": {
+          "title": "Слой данных",
+          "pills": {
+            "postgres": "PostgreSQL",
+            "redis": "Redis",
+            "rabbitmqOptional": "RabbitMQ (опционально)"
+          }
+        },
+        "delivery": {
+          "title": "Слой доставки",
+          "pills": {
+            "ciPipeline": "CI пайплайн",
+            "testGates": "Тестовые гейты",
+            "prodImages": "Production-образы"
+          }
+        }
+      }
+    },
+    "securityCompliance": {
+      "title": "Безопасность и операционные меры",
+      "items": {
+        "envSecrets": {
+          "title": "Управление окружением и секретами",
+          "description": "Конфигурация по окружениям через .env файлы с отдельными настройками для local, test и E2E прогонов."
+        },
+        "rbac": {
+          "title": "Ролевой доступ (RBAC)",
+          "description": "Разделение ролей на платформе (компания, админ, рекрутер, кандидат) и проверка прав на стороне бэкенда."
+        },
+        "containerIsolation": {
+          "title": "Изоляция контейнеров",
+          "description": "Сервисы запускаются в изолированных Docker-контейнерах с контролируемой сетью и воспроизводимым runtime-поведением."
+        },
+        "testGates": {
+          "title": "Тестовые гейты в CI",
+          "description": "Unit, integration и end-to-end проверки выступают качественными гейтами перед созданием production-образов."
+        }
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Переключайтесь между local, Docker, demo и production сценариями, чтобы увидеть, как поднимаются инфраструктурные слои и общие платформенные сервисы.",
+      "tags": {
+        "docker": "Docker",
+        "compose": "Docker Compose",
+        "nginx": "Nginx",
+        "observability": "Observability",
+        "networking": "Networking",
+        "services": "Services",
+        "images": "Images",
+        "runtime": "Runtime",
+        "demo": "Demo",
+        "preview": "Preview",
+        "edge": "Edge",
+        "production": "Production",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Локальный подъём базового инфраструктурного стека для разработки и внутренней проверки.",
+          "lines": {
+            "comment": "Локальный infrastructure bootstrap",
+            "output1": "[✓] Создание local networks...",
+            "output2": "[✓] Запуск core services...",
+            "success": "Infrastructure stack готов"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Подъём инфраструктурных сервисов через containerized images и runtime orchestration.",
+          "lines": {
+            "comment": "Containerized infrastructure environment",
+            "output1": "[✓] Сборка infrastructure images...",
+            "output2": "[✓] Запуск runtime stack...",
+            "success": "Docker environment готов"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Использование demo flow для preview infrastructure environments и integration validation.",
+          "lines": {
+            "comment": "Demo infrastructure deployment",
+            "output1": "[✓] Подготовка preview infrastructure...",
+            "output2": "[✓] Публикация edge services...",
+            "success": "Demo deployment завершён"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Использование production workflow для валидации и подъёма финального инфраструктурного стека.",
+          "lines": {
+            "comment": "Production infrastructure deployment",
+            "output1": "[✓] Запуск infrastructure checks...",
+            "output2": "[✓] Сборка release images...",
+            "output3": "[✓] Применение production stack...",
+            "success": "Production deployment завершён"
+          }
+        }
+      }
+    }
+  },
+  "footer": {
+    "brand": {
+      "name": "DeComplex",
+      "subtitle": "Документация платформы"
+    },
+    "links": {
+      "aria": "Ссылки в футере",
+      "live": "Документация",
+      "github": "GitHub",
+      "api": "API"
+    },
+    "meta": {
+      "copyright": "© 2026 DeComplex",
+      "product": "Enterprise-платформа",
+      "version": "Docs v1.0.0",
+      "updated": "Обновлено: март 2026"
+    }
+  },
+  "common": {
+    "pageResources": {
+      "live": "Live",
+      "github": "GitHub",
+      "apk": "Android APK",
+      "download": "Скачать",
+      "ariaLinks": "Ссылки страницы"
+    }
   }
 }

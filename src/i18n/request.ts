@@ -1,22 +1,47 @@
 import { getRequestConfig } from "next-intl/server";
-import { defaultLocale, locales } from "./routing";
+import type { AbstractIntlMessages } from "next-intl";
+import { defaultLocale, localeSet, locales } from "./routing";
 import type { Locale } from "./routing";
 
-type Messages = Record<string, unknown>;
-type MessagesModule = { default: Messages };
+function isLocale(v: unknown): v is Locale {
+  return typeof v === "string" && localeSet.has(v as Locale);
+}
 
-const loaders: Record<Locale, () => Promise<MessagesModule>> = {
-  en: () => import("./messages/en.json"),
-  ru: () => import("./messages/ru.json"),
-  hy: () => import("./messages/hy.json"),
-};
+function isRecord(v: unknown): v is Record<string, unknown> {
+  return typeof v === "object" && v !== null && !Array.isArray(v);
+}
+
+function isAbstractIntlMessages(v: unknown): v is AbstractIntlMessages {
+  if (!isRecord(v)) return false;
+
+  for (const value of Object.values(v)) {
+    if (typeof value === "string") continue;
+    if (!isAbstractIntlMessages(value)) return false;
+  }
+
+  return true;
+}
+
+export async function loadMessages(locale: Locale | string): Promise<AbstractIntlMessages> {
+  const mod: unknown = await import(`../i18n/messages/${locale}.json`);
+  if (!isRecord(mod) || !("default" in mod)) {
+    throw new Error(`Invalid messages module for locale: ${locale}`);
+  }
+
+  const messages: unknown = mod.default;
+  if (!isAbstractIntlMessages(messages)) {
+    throw new Error(`Invalid messages shape for locale: ${locale}`);
+  }
+
+  return messages;
+}
 
 export default getRequestConfig(async ({ locale }) => {
-  const safeLocale: Locale = locales.includes(locale as Locale)
-    ? (locale as Locale)
-    : defaultLocale;
+  const safeLocale: Locale = isLocale(locale) ? locale : defaultLocale;
 
-  const mod = await loaders[safeLocale]();
-
-  return { locale: safeLocale, timeZone: "UTC", messages: mod.default };
+  return {
+    locale: safeLocale,
+    messages: await loadMessages(safeLocale),
+    availableLocales: locales,
+  };
 });

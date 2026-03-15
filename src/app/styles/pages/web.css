@@ -1,0 +1,17 @@
+.webApp-page .webApp-card {
+  background: var(--dc-surface);
+  border: 1px solid var(--dc-border);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.webApp-page .webApp-panel {
+  background: var(--dc-surface);
+  border: 1px solid var(--dc-border);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.webApp-page .flow-arrow {
+  color: var(--dc-text-soft);
+}

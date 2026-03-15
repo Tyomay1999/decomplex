@@ -1,0 +1,81 @@
+.overview-page .metric-card {
+  background: linear-gradient(135deg, var(--dc-surface-muted) 0%, var(--dc-surface) 100%);
+  border: 1px solid var(--dc-border);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+@media (max-width: 768px) {
+  .overview-page .architecture-diagram-desktop {
+    display: none;
+  }
+
+  .overview-page .architecture-diagram-mobile {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .overview-page .architecture-diagram-mobile .diagram-box {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .overview-page .architecture-diagram-mobile .mobile-arrow {
+    display: flex;
+    justify-content: center;
+    color: var(--dc-text-soft);
+  }
+
+  .overview-page .architecture-diagram-mobile .mobile-arrow svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .overview-page .architecture-diagram-mobile .processing-engine {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .overview-page .architecture-diagram-mobile .infrastructure {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 769px) {
+  .overview-page .architecture-diagram-desktop {
+    display: block;
+  }
+
+  .overview-page .architecture-diagram-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .overview-page .dc-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .overview-page .dc-main {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .overview-page .dc-container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .overview-page .dc-container {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}

@@ -4,17 +4,807 @@
     "description": "DeComplex is a public full-stack showcase platform built to demonstrate real engineering skills and architecture. Since prior commercial work is under NDA, this platform provides a transparent, production-style reference across web, admin, React Native mobile, and a scalable backend."
   },
   "nav": {
-    "home": "Home",
-    "mobile": "Mobile App",
-    "web": "Web App",
-    "backend": "Backend Site",
-    "admin": "Admin Site"
+    "overview": "Overview",
+    "web": "Web",
+    "admin": "Admin",
+    "mobile": "Mobile",
+    "backend": "Backend",
+    "infra": "Infra"
   },
-  "page": {
-    "home": "Home route in English",
-    "mobile": "Mobile app route in English",
-    "web": "Web app route in English",
-    "backend": "Backend site route in English",
-    "admin": "Admin site route in English"
+  "preferences": {
+    "title": "Preferences",
+    "language": "Language",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "overview": {
+    "hero": {
+      "title": "Platform Overview",
+      "description": "DeComplex is a modular, production-grade platform created to demonstrate end-to-end system architecture, scalable service design, and real-world engineering practices. It serves as a unified showcase of web, mobile, backend, and infrastructure components working together as a cohesive system."
+    },
+    "architecture": {
+      "title": "System Architecture",
+      "inputs": {
+        "webApp": "Web App",
+        "adminConsole": "Admin Console",
+        "mobileSdk": "Mobile App"
+      },
+      "corePlatform": "Core Platform",
+      "processingEngine": "Processing Engine",
+      "processingPills": {
+        "eventProcessing": "Event Processing",
+        "stateManagement": "State Management",
+        "orchestration": "Orchestration"
+      },
+      "outputs": {
+        "apiServices": "API Services",
+        "dataLayer": "Data Layer"
+      },
+      "infrastructureFoundation": "Infrastructure Foundation",
+      "infrastructure": {
+        "compute": "Compute",
+        "storage": "Storage",
+        "network": "Network",
+        "security": "Security"
+      }
+    },
+    "documentationModules": {
+      "title": "Documentation Modules",
+      "cards": {
+        "webApp": {
+          "title": "Web App",
+          "description": "Public-facing web interface for browsing job vacancies, authenticating users, and submitting applications with resumes and cover letters."
+        },
+        "adminConsole": {
+          "title": "Admin Console",
+          "description": "Administrative interface for companies to manage users, roles, job vacancies, and candidate applications."
+        },
+        "mobileSdk": {
+          "title": "Mobile App",
+          "description": "React Native application built with Expo, mirroring Web App behavior and available as web and Android builds."
+        },
+        "backendServices": {
+          "title": "Backend Services",
+          "description": "REST API handling authentication, business logic, data persistence, and integrations across all client applications."
+        },
+        "infrastructure": {
+          "title": "Infrastructure",
+          "description": "Containerized deployment, CI pipelines, automated testing, and operational workflows across the full platform lifecycle."
+        }
+      }
+    },
+    "metrics": {
+      "title": "Engineering Highlights",
+      "items": {
+        "testCoverage": "Unit, Integration & E2E Tests",
+        "containerization": "Fully Containerized Services",
+        "ciPipeline": "Automated CI Pipelines",
+        "architecture": "Modular & Scalable Architecture"
+      }
+    }
+  },
+  "webApp": {
+    "page": {
+      "breadcrumb": {
+        "documentation": "Documentation",
+        "current": "Web App"
+      },
+      "title": "Web App",
+      "description": "User-facing web interface that allows candidates to browse job vacancies publicly, authenticate to access detailed vacancy information, and submit applications with cover letters and resumes. Supports multilingual content and session-based authentication."
+    },
+    "keyFeatures": {
+      "title": "Key Features",
+      "items": {
+        "vacancyBrowsing": {
+          "title": "Vacancy Browsing",
+          "description": "Public access to job listings with basic vacancy information available without authentication."
+        },
+        "authenticationFlow": {
+          "title": "Authentication Flow",
+          "description": "User registration and login are required to access detailed vacancy information and apply for positions."
+        },
+        "vacancyDetails": {
+          "title": "Vacancy Details",
+          "description": "Detailed vacancy pages available to authenticated users, including full job descriptions and requirements."
+        },
+        "applicationSubmission": {
+          "title": "Application Submission",
+          "description": "Ability to submit job applications with a cover letter and attached resume directly through the platform."
+        }
+      }
+    },
+    "techStack": {
+      "title": "Technology Stack"
+    },
+    "architectureNotes": {
+      "title": "Architecture Notes",
+      "items": {
+        "componentBased": {
+          "title": "Component-based architecture",
+          "description": "- Modular UI components with clear separation of concerns and reusable patterns."
+        },
+        "authAndProtectedAccess": {
+          "title": "Authentication and protected access",
+          "description": "- Vacancy browsing is public, while vacancy details and application submission require authentication."
+        },
+        "localizationTheming": {
+          "title": "Localization and theming",
+          "description": "- Internationalization via next-intl and theme switching via next-themes."
+        },
+        "centralizedApi": {
+          "title": "API integration",
+          "description": "- Consistent request handling and error mapping across UI flows."
+        },
+        "testingCoverage": {
+          "title": "Testing coverage",
+          "description": "- Unit, integration, and end-to-end tests cover critical user flows (auth, vacancy details, application submission)."
+        }
+      }
+    },
+    "requestFlow": {
+      "title": "Request Flow",
+      "nodes": {
+        "webApp": "Web App",
+        "auth": "Auth",
+        "vacancies": "Vacancies",
+        "applications": "Applications",
+        "apiGateway": "API Gateway",
+        "backendServices": "Backend Services"
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Switch between local, Docker, demo, and production workflows to see how the web application is developed, previewed, and released.",
+      "tags": {
+        "nextjs": "Next.js",
+        "local": "Local",
+        "docker": "Docker",
+        "production": "Production",
+        "node": "Node.js",
+        "devServer": "Dev Server",
+        "compose": "Docker Compose",
+        "webRuntime": "Web Runtime",
+        "demo": "Demo",
+        "preview": "Preview",
+        "staticOutput": "Static Output",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Run the web application locally through the standard development server workflow.",
+          "lines": {
+            "comment": "Local web development",
+            "output1": "[✓] Starting development server...",
+            "success": "Web application is ready"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Start the web application through containerized services and runtime dependencies.",
+          "lines": {
+            "comment": "Containerized web environment",
+            "output1": "[✓] Building Docker images...",
+            "output2": "[✓] Starting web runtime...",
+            "success": "Docker environment ready"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Run a preview-oriented deployment flow for demo and validation environments.",
+          "lines": {
+            "comment": "Demo web deployment",
+            "output1": "[✓] Preparing preview build...",
+            "output2": "[✓] Publishing demo target...",
+            "success": "Demo deployment complete"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Use the release workflow to build and deploy the production web target.",
+          "lines": {
+            "comment": "Production web deployment",
+            "output1": "[✓] Running validation pipeline...",
+            "output2": "[✓] Building production artifacts...",
+            "output3": "[✓] Deploying web target...",
+            "success": "Production deployment complete"
+          }
+        }
+      }
+    }
+  },
+  "adminConsole": {
+    "page": {
+      "breadcrumb": {
+        "documentation": "Documentation",
+        "current": "Admin Console"
+      },
+      "title": "Admin Console",
+      "description": "Administrative interface for companies to manage users, roles, job vacancies, and candidate applications. Supports role-based access for company admins and recruiters."
+    },
+
+    "keyFeatures": {
+      "title": "Key Features",
+      "items": {
+        "roleManagement": {
+          "title": "Role-Based Access",
+          "description": "Separation of permissions between company admins and recruiters with predefined permissions."
+        },
+        "userManagement": {
+          "title": "User Management",
+          "description": "Creation and management of company users, including admins and recruiters."
+        },
+        "vacancyManagement": {
+          "title": "Vacancy Management",
+          "description": "Creation, editing, and publishing of job vacancies by authorized users."
+        },
+        "applicationReview": {
+          "title": "Application Review",
+          "description": "Review of candidate applications, including access to submitted resumes and cover letters."
+        }
+      }
+    },
+
+    "techStack": {
+      "title": "Technology Stack"
+    },
+
+    "architectureNotes": {
+      "title": "Architecture Notes",
+      "items": {
+        "roleSeparation": {
+          "title": "Role separation",
+          "description": "- Clear separation of permissions between company admins and recruiters."
+        },
+        "centralizedApi": {
+          "title": "API integration",
+          "description": "- Centralized API communication for managing users, vacancies, and applications."
+        },
+        "testingCoverage": {
+          "title": "Testing coverage",
+          "description": "- Unit, integration, and end-to-end tests cover core admin flows."
+        }
+      }
+    },
+
+    "requestFlow": {
+      "title": "Request Flow",
+      "nodes": {
+        "adminConsole": "Admin Console",
+        "management": "User & Vacancy Management",
+        "apiGateway": "API Gateway",
+        "backendServices": "Backend Services"
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Switch between local, Docker, demo, and production workflows to see how the admin panel is started, previewed, and delivered.",
+      "tags": {
+        "react": "React",
+        "vite": "Vite",
+        "local": "Local",
+        "docker": "Docker",
+        "node": "Node.js",
+        "devServer": "Dev Server",
+        "compose": "Docker Compose",
+        "nginx": "Nginx",
+        "demo": "Demo",
+        "preview": "Preview",
+        "dashboard": "Dashboard",
+        "production": "Production",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Run the admin panel locally with the standard Vite development workflow.",
+          "lines": {
+            "comment": "Local admin development",
+            "output1": "[✓] Starting Vite dev server...",
+            "success": "Admin panel is ready"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Launch the admin panel through its containerized build and runtime pipeline.",
+          "lines": {
+            "comment": "Containerized admin environment",
+            "output1": "[✓] Building Docker images...",
+            "output2": "[✓] Starting Nginx runtime...",
+            "success": "Docker environment ready"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Use the demo deployment flow for preview dashboards and validation environments.",
+          "lines": {
+            "comment": "Demo admin deployment",
+            "output1": "[✓] Building preview dashboard...",
+            "output2": "[✓] Publishing demo target...",
+            "success": "Demo deployment complete"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Use the release workflow to prepare and deploy the production admin target.",
+          "lines": {
+            "comment": "Production admin deployment",
+            "output1": "[✓] Running validation pipeline...",
+            "output2": "[✓] Building release artifacts...",
+            "output3": "[✓] Deploying admin target...",
+            "success": "Production deployment complete"
+          }
+        }
+      }
+    }
+  },
+  "mobileSdk": {
+    "page": {
+      "breadcrumb": {
+        "documentation": "Documentation",
+        "current": "Mobile App"
+      },
+      "title": "Mobile App",
+      "description": "Cross-platform application built with React Native and Expo. Available as a web build and as an Android APK. iOS is supported for development and testing via Expo Go (QR), without App Store distribution. Mirrors the Web App flow for browsing vacancies, authentication, and submitting applications with cover letters and resume uploads."
+    },
+
+    "keyFeatures": {
+      "title": "Key Features",
+      "items": {
+        "vacancyBrowsing": {
+          "title": "Vacancy browsing",
+          "description": "Public access to vacancy listings, with authentication required for detailed views and application submission."
+        },
+        "authenticationFlow": {
+          "title": "Authentication flow",
+          "description": "Registration and login using token-based sessions to access protected actions."
+        },
+        "applicationSubmission": {
+          "title": "Application submission",
+          "description": "Submit job applications with a cover letter and attach a resume via the document picker."
+        },
+        "localSessionStorage": {
+          "title": "Local session storage",
+          "description": "Persist device fingerprint and authentication tokens using AsyncStorage, with secure storage for sensitive values."
+        }
+      }
+    },
+
+    "techStack": {
+      "title": "Technology Stack"
+    },
+
+    "architectureNotes": {
+      "title": "Architecture Notes",
+      "items": {
+        "expoCrossPlatform": {
+          "title": "Expo cross-platform delivery",
+          "description": "- Single codebase delivered as a web build and as native Android, with iOS supported for dev/testing via Expo Go."
+        },
+        "stateAndApi": {
+          "title": "State management and data fetching",
+          "description": "- Redux Toolkit with RTK Query for server communication and API request lifecycle management."
+        },
+        "localization": {
+          "title": "Localization",
+          "description": "- Multilingual UI powered by i18next with device locale detection."
+        },
+        "testingCoverage": {
+          "title": "Testing coverage",
+          "description": "- Jest-based unit and integration tests, along with Playwright end-to-end tests for the web export."
+        }
+      }
+    },
+
+    "requestFlow": {
+      "title": "Request Flow",
+      "nodes": {
+        "mobileApp": "Mobile App",
+        "clientState": "Local State & Sync",
+        "auth": "Auth",
+        "vacancies": "Vacancies",
+        "applications": "Applications",
+        "apiGateway": "API Gateway",
+        "backendServices": "Backend Services"
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Switch between local, Docker, demo, and production workflows to see how the mobile module can be started, previewed, or released.",
+      "tags": {
+        "expo": "Expo",
+        "android": "Android",
+        "local": "Local",
+        "docker": "Docker",
+        "node": "Node.js",
+        "compose": "Docker Compose",
+        "sharedServices": "Shared Services",
+        "demo": "Demo",
+        "preview": "Preview",
+        "apk": "APK",
+        "production": "Production",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Run the mobile application directly through the local Expo development workflow.",
+          "lines": {
+            "comment": "Local mobile development with Expo",
+            "output1": "[✓] Starting Metro bundler...",
+            "success": "Development server ready"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Boot the mobile-related services through containerized infrastructure and shared dependencies.",
+          "lines": {
+            "comment": "Containerized mobile environment",
+            "output1": "[✓] Building Docker images...",
+            "output2": "[✓] Starting shared services...",
+            "success": "Docker environment ready"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Run the demo-oriented mobile flow for preview environments and distributable builds.",
+          "lines": {
+            "comment": "Demo mobile deployment",
+            "output1": "[✓] Preparing preview assets...",
+            "output2": "[✓] Publishing demo build...",
+            "success": "Demo deployment complete"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Use the production release workflow to prepare and deploy the mobile target for final environments.",
+          "lines": {
+            "comment": "Production mobile deployment",
+            "output1": "[✓] Running validation pipeline...",
+            "output2": "[✓] Building release artifacts...",
+            "output3": "[✓] Deploying production target...",
+            "success": "Production deployment complete"
+          }
+        }
+      }
+    }
+  },
+  "backendServices": {
+    "page": {
+      "breadcrumb": {
+        "documentation": "Documentation",
+        "current": "Backend Services"
+      },
+      "title": "Backend Services",
+      "description": "Backend API that powers the DeComplex platform. Provides REST endpoints, authentication, business logic, and integrations used by the Web App, Admin Console, and Mobile App."
+    },
+    "keyFeatures": {
+      "title": "Key Features",
+      "items": {
+        "restApi": {
+          "title": "REST API",
+          "description": "Express-based REST endpoints with a clear routing structure and consistent request-response handling."
+        },
+        "auth": {
+          "title": "Authentication & Authorization",
+          "description": "JWT-based authentication with role-based access control for companies, admins, and recruiters."
+        },
+        "databaseMigrations": {
+          "title": "PostgreSQL + Migrations",
+          "description": "Sequelize models with migrations and seeders for reproducible environments and stable schema evolution."
+        },
+        "integrationsDocs": {
+          "title": "Integrations & API Docs",
+          "description": "Redis for caching and auxiliary storage, optional RabbitMQ for asynchronous tasks, and Swagger/OpenAPI documentation for API endpoints."
+        }
+      }
+    },
+    "techStack": {
+      "title": "Technology Stack"
+    },
+    "architectureNotes": {
+      "title": "Architecture Notes",
+      "items": {
+        "modularApi": {
+          "title": "Modular API design",
+          "description": "- Feature-oriented modules with isolated routing layers, validation, and service logic."
+        },
+        "dataAccess": {
+          "title": "Data access layer",
+          "description": "- Sequelize-based persistence with explicit migrations and well-defined query patterns."
+        },
+        "operability": {
+          "title": "Security and observability",
+          "description": "- Helmet, CORS configuration, validation (Joi), and structured logging (Pino) for secure and traceable operations."
+        }
+      }
+    },
+    "serviceArchitecture": {
+      "title": "Service Architecture",
+      "boxes": {
+        "apiServer": "API Server (Express)",
+        "authModule": "Auth Module",
+        "vacanciesModule": "Vacancies Module",
+        "applicationsModule": "Applications Module",
+        "adminModule": "Company/Admin Management",
+        "email": "Email (Nodemailer)"
+      },
+      "mq": "Message Queue (RabbitMQ, optional)",
+      "stores": {
+        "postgres": "PostgreSQL (Sequelize)",
+        "redisCache": "Redis (cache/auxiliary storage)"
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Switch between local, Docker, demo, and production workflows to see how backend services and their dependencies are started and deployed.",
+      "tags": {
+        "node": "Node.js",
+        "postgresql": "PostgreSQL",
+        "redis": "Redis",
+        "rabbitmq": "RabbitMQ",
+        "migrations": "Migrations",
+        "api": "API",
+        "docker": "Docker",
+        "compose": "Docker Compose",
+        "sharedServices": "Shared Services",
+        "demo": "Demo",
+        "preview": "Preview",
+        "production": "Production",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Run backend services locally with migrations and the development server workflow.",
+          "lines": {
+            "comment": "Local backend development",
+            "output1": "[✓] Starting backend API server...",
+            "success": "Backend service is ready"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Start backend services and shared runtime dependencies through containers.",
+          "lines": {
+            "comment": "Containerized backend environment",
+            "output1": "[✓] Building Docker images...",
+            "output2": "[✓] Starting databases and brokers...",
+            "output3": "[✓] Starting backend services...",
+            "success": "Docker environment ready"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Use the demo deployment flow for backend preview and validation environments.",
+          "lines": {
+            "comment": "Demo backend deployment",
+            "output1": "[✓] Preparing preview backend target...",
+            "output2": "[✓] Publishing demo services...",
+            "success": "Demo deployment complete"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Use the release workflow to build, validate, and deploy production backend services.",
+          "lines": {
+            "comment": "Production backend deployment",
+            "output1": "[✓] Running validation pipeline...",
+            "output2": "[✓] Building service artifacts...",
+            "output3": "[✓] Deploying backend services...",
+            "success": "Production deployment complete"
+          }
+        }
+      }
+    }
+  },
+  "infrastructure": {
+    "breadcrumb": {
+      "documentation": "Documentation",
+      "current": "Infrastructure"
+    },
+    "header": {
+      "title": "Infrastructure",
+      "lead": "Containerized runtime and CI/CD workflows for the DeComplex platform. Covers service isolation, reverse proxy and load balancing, test environments, and production packaging."
+    },
+    "deploymentModel": {
+      "title": "Deployment Model",
+      "cards": {
+        "containerizedServices": {
+          "title": "Containerized Services",
+          "description": "All components run in isolated Docker containers, including the Web App, Admin Console, Mobile App, Backend API, PostgreSQL, Redis, and RabbitMQ."
+        },
+        "reverseProxyAndLb": {
+          "title": "Reverse Proxy & Load Balancing",
+          "description": "An Nginx-based entry point routes traffic to internal services and can distribute requests across multiple backend instances."
+        },
+        "e2eTestEnvironments": {
+          "title": "E2E Test Environments",
+          "description": "Dedicated E2E Docker Compose environments spin up test containers, validate critical flows (including load-balancing behavior), and are torn down after completion."
+        },
+        "automatedDelivery": {
+          "title": "Automated Delivery",
+          "description": "CI pipelines build the services, run unit, integration, and E2E test suites, and produce production images after successful verification."
+        }
+      }
+    },
+    "technologyStack": {
+      "title": "Technology Stack",
+      "items": {
+        "docker": "Docker",
+        "dockerCompose": "Docker Compose",
+        "nginx": "Nginx (Reverse Proxy / Load Balancer)",
+        "postgres": "PostgreSQL",
+        "redis": "Redis",
+        "rabbitmqOptional": "RabbitMQ (optional)",
+        "ci": "CI Automation (GitHub Actions / Webhooks)",
+        "playwright": "Playwright (E2E)",
+        "jest": "Jest (Unit / Integration)",
+        "vitest": "Vitest (Frontend Testing)"
+      }
+    },
+    "layers": {
+      "title": "Infrastructure Layers",
+      "items": {
+        "edge": {
+          "title": "Edge Layer",
+          "pills": {
+            "nginx": "Nginx",
+            "reverseProxy": "Reverse Proxy",
+            "loadBalancing": "Load Balancing"
+          }
+        },
+        "runtime": {
+          "title": "Runtime Layer",
+          "pills": {
+            "docker": "Docker",
+            "dockerCompose": "Docker Compose",
+            "serviceNetworking": "Service Networking"
+          }
+        },
+        "application": {
+          "title": "Application Layer",
+          "pills": {
+            "webApp": "Web App",
+            "adminConsole": "Admin Console",
+            "mobileApp": "Mobile App",
+            "backendApi": "Backend API"
+          }
+        },
+        "data": {
+          "title": "Data Layer",
+          "pills": {
+            "postgres": "PostgreSQL",
+            "redis": "Redis",
+            "rabbitmqOptional": "RabbitMQ (optional)"
+          }
+        },
+        "delivery": {
+          "title": "Delivery Layer",
+          "pills": {
+            "ciPipeline": "CI Pipeline",
+            "testGates": "Test Gates",
+            "prodImages": "Production Images"
+          }
+        }
+      }
+    },
+    "securityCompliance": {
+      "title": "Security & Operational Controls",
+      "items": {
+        "envSecrets": {
+          "title": "Environment and secrets management",
+          "description": "Environment-specific configuration via .env files, with separate settings for local, testing, and E2E environments."
+        },
+        "rbac": {
+          "title": "Role-based access control",
+          "description": "Role separation across the platform (company admins, recruiters, and candidates) enforced by backend authorization."
+        },
+        "containerIsolation": {
+          "title": "Container isolation",
+          "description": "Services run in isolated Docker containers with controlled networking and reproducible runtime behavior."
+        },
+        "testGates": {
+          "title": "Test gates in CI",
+          "description": "Unit, integration, and end-to-end tests act as quality gates before producing production images."
+        }
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Switch between local, Docker, demo, and production workflows to see how infrastructure layers and shared platform services are provisioned.",
+      "tags": {
+        "docker": "Docker",
+        "compose": "Docker Compose",
+        "nginx": "Nginx",
+        "observability": "Observability",
+        "networking": "Networking",
+        "services": "Services",
+        "images": "Images",
+        "runtime": "Runtime",
+        "demo": "Demo",
+        "preview": "Preview",
+        "edge": "Edge",
+        "production": "Production",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Bring up the core infrastructure stack locally for development and internal validation.",
+          "lines": {
+            "comment": "Local infrastructure bootstrap",
+            "output1": "[✓] Creating local networks...",
+            "output2": "[✓] Starting core services...",
+            "success": "Infrastructure stack is ready"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Provision infrastructure services through containerized images and runtime orchestration.",
+          "lines": {
+            "comment": "Containerized infrastructure environment",
+            "output1": "[✓] Building infrastructure images...",
+            "output2": "[✓] Starting runtime stack...",
+            "success": "Docker environment ready"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Use the demo flow for preview infrastructure environments and integration validation.",
+          "lines": {
+            "comment": "Demo infrastructure deployment",
+            "output1": "[✓] Preparing preview infrastructure...",
+            "output2": "[✓] Publishing edge services...",
+            "success": "Demo deployment complete"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Use the production workflow to validate and provision the final infrastructure stack.",
+          "lines": {
+            "comment": "Production infrastructure deployment",
+            "output1": "[✓] Running infrastructure checks...",
+            "output2": "[✓] Building release images...",
+            "output3": "[✓] Applying production stack...",
+            "success": "Production deployment complete"
+          }
+        }
+      }
+    }
+  },
+  "footer": {
+    "brand": {
+      "name": "DeComplex",
+      "subtitle": "Platform Documentation"
+    },
+    "links": {
+      "aria": "Footer navigation",
+      "live": "Documentation",
+      "github": "GitHub",
+      "api": "API"
+    },
+    "meta": {
+      "copyright": "© 2026 DeComplex",
+      "product": "Enterprise Platform",
+      "version": "Docs v1.0.0",
+      "updated": "Last updated: March 2026"
+    }
+  },
+  "common": {
+    "pageResources": {
+      "live": "Live",
+      "github": "GitHub",
+      "apk": "Android APK",
+      "download": "Download",
+      "ariaLinks": "Page links"
+    }
   }
 }

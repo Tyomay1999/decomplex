@@ -1,0 +1,161 @@
+:root {
+  --dc-bg: #ffffff;
+  --dc-surface: #ffffff;
+  --dc-surface-muted: #f8fafc;
+
+  --dc-border: #e2e8f0;
+
+  --dc-text: #0f172a;
+  --dc-text-muted: #475569;
+  --dc-text-soft: #94a3b8;
+
+  --dc-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --dc-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  --dc-divider: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+
+  --dc-mobile-nav-bg: #ffffff;
+  --dc-mobile-nav-border: #e2e8f0;
+
+  --dc-icon-wrap-neutral: #f1f5f9;
+  --dc-icon-wrap-blue: #eff6ff;
+  --dc-icon-wrap-purple: #faf5ff;
+  --dc-icon-wrap-emerald: #ecfdf5;
+  --dc-icon-wrap-orange: #fff7ed;
+
+  --dc-pill-neutral-bg: #f1f5f9;
+  --dc-pill-neutral-text: #475569;
+
+  --dc-pill-pg-bg: #dbeafe;
+  --dc-pill-pg-border: #bfdbfe;
+  --dc-pill-pg-text: #1d4ed8;
+
+  --dc-pill-redis-bg: #fee2e2;
+  --dc-pill-redis-border: #fecaca;
+  --dc-pill-redis-text: #b91c1c;
+
+  --dc-breadcrumb-text: #64748b;
+  --dc-breadcrumb-sep: #94a3b8;
+  --dc-link-hover: #334155;
+
+  --dc-card-border: #e5e7eb;
+
+  --dc-tech-badge-bg: #f8fafc;
+  --dc-tech-badge-border: #e2e8f0;
+  --dc-tech-badge-text: #475569;
+
+  --dc-divider-line: #e2e8f0;
+
+  --dc-tone-blue-bg: #eff6ff;
+  --dc-tone-blue-border: #dbeafe;
+  --dc-tone-blue-title: #1e40af;
+  --dc-tone-blue-pill: #1d4ed8;
+
+  --dc-tone-emerald-bg: #ecfdf5;
+  --dc-tone-emerald-border: #d1fae5;
+  --dc-tone-emerald-title: #065f46;
+  --dc-tone-emerald-pill: #047857;
+
+  --dc-tone-purple-bg: #f5f3ff;
+  --dc-tone-purple-border: #ede9fe;
+  --dc-tone-purple-title: #5b21b6;
+  --dc-tone-purple-pill: #6d28d9;
+
+  --dc-tone-slate-bg: #f1f5f9;
+  --dc-tone-slate-border: #e2e8f0;
+  --dc-tone-slate-title: #334155;
+  --dc-tone-slate-pill: #475569;
+
+  --dc-compliance-emerald-bg: #ecfdf5;
+  --dc-compliance-emerald-text: #059669;
+
+  --dc-compliance-blue-bg: #eff6ff;
+  --dc-compliance-blue-text: #2563eb;
+
+  --dc-compliance-purple-bg: #f5f3ff;
+  --dc-compliance-purple-text: #7c3aed;
+}
+
+html.dark {
+  --dc-bg: #0b1220;
+  --dc-surface: #0f172a;
+  --dc-surface-muted: #0f172a;
+
+  --dc-border: #334155;
+
+  --dc-text: #e2e8f0;
+  --dc-text-muted: #cbd5e1;
+  --dc-text-soft: #94a3b8;
+
+  --dc-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.24);
+  --dc-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+  --dc-divider: linear-gradient(90deg, transparent, #334155, transparent);
+
+  --dc-mobile-nav-bg: #0f172a;
+  --dc-mobile-nav-border: #334155;
+
+  --dc-icon-wrap-neutral: #1e293b;
+  --dc-icon-wrap-blue: rgba(59, 130, 246, 0.14);
+  --dc-icon-wrap-purple: rgba(168, 85, 247, 0.14);
+  --dc-icon-wrap-emerald: rgba(16, 185, 129, 0.14);
+  --dc-icon-wrap-orange: rgba(249, 115, 22, 0.14);
+
+  --dc-pill-neutral-bg: #1e293b;
+  --dc-pill-neutral-text: #cbd5e1;
+
+  --dc-pill-pg-bg: rgba(37, 99, 235, 0.15);
+  --dc-pill-pg-border: rgba(147, 197, 253, 0.25);
+  --dc-pill-pg-text: #93c5fd;
+
+  --dc-pill-redis-bg: rgba(239, 68, 68, 0.15);
+  --dc-pill-redis-border: rgba(252, 165, 165, 0.25);
+  --dc-pill-redis-text: #fca5a5;
+
+  --dc-breadcrumb-text: #94a3b8;
+  --dc-breadcrumb-sep: #64748b;
+  --dc-link-hover: #e2e8f0;
+
+  --dc-card-border: #334155;
+
+  --dc-tech-badge-bg: rgba(255, 255, 255, 0.04);
+  --dc-tech-badge-border: rgba(255, 255, 255, 0.1);
+  --dc-tech-badge-text: #cbd5e1;
+
+  --dc-divider-line: #334155;
+
+  --dc-tone-blue-bg: rgba(59, 130, 246, 0.1);
+  --dc-tone-blue-border: rgba(147, 197, 253, 0.22);
+  --dc-tone-blue-title: #bfdbfe;
+  --dc-tone-blue-pill: #93c5fd;
+
+  --dc-tone-emerald-bg: rgba(16, 185, 129, 0.1);
+  --dc-tone-emerald-border: rgba(110, 231, 183, 0.2);
+  --dc-tone-emerald-title: #a7f3d0;
+  --dc-tone-emerald-pill: #6ee7b7;
+
+  --dc-tone-purple-bg: rgba(168, 85, 247, 0.1);
+  --dc-tone-purple-border: rgba(196, 181, 253, 0.2);
+  --dc-tone-purple-title: #ddd6fe;
+  --dc-tone-purple-pill: #c4b5fd;
+
+  --dc-tone-slate-bg: rgba(148, 163, 184, 0.1);
+  --dc-tone-slate-border: rgba(148, 163, 184, 0.22);
+  --dc-tone-slate-title: #e2e8f0;
+  --dc-tone-slate-pill: #cbd5e1;
+
+  --dc-compliance-emerald-bg: rgba(16, 185, 129, 0.12);
+  --dc-compliance-emerald-text: #6ee7b7;
+
+  --dc-compliance-blue-bg: rgba(59, 130, 246, 0.12);
+  --dc-compliance-blue-text: #93c5fd;
+
+  --dc-compliance-purple-bg: rgba(168, 85, 247, 0.12);
+  --dc-compliance-purple-text: #c4b5fd;
+}
+
+html,
+body {
+  background: var(--dc-bg);
+  color: var(--dc-text);
+}

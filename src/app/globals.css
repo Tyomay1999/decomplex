@@ -1,8 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "./styles/base.css";
+@import "./styles/theme.css";
+@import "./styles/shared.css";
 
-html,
-body {
-  height: 100%;
-}
+@import "styles/layout/footer.css";
+@import "./styles/layout/navbar.css";
+@import "styles/pages/overview.css";
+@import "styles/pages/web.css";
+@import "styles/pages/admin.css";
+@import "styles/pages/mobile.css";
+@import "styles/pages/backend.css";
+@import "styles/pages/infrastructure.css";

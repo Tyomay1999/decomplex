@@ -1,0 +1,10 @@
+.admin-page .admin-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--dc-icon-wrap-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

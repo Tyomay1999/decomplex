@@ -1,8 +1,11 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { cookies } from "next/headers";
 import "./globals.css";
-import { env } from "@/lib/env";
+import { withBasePath, metadataBaseUrl } from "@/lib/url";
+import HtmlLangSync from "@/components/common/HtmlLangSync";
+import { defaultLocale, isLocale } from "@/i18n/routing";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,17 +16,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-function withBasePath(path: string): string {
-  const bp = env.BASE_PATH ?? "";
-  return bp ? `${bp}${path}` : path;
-}
-
-function metadataBaseUrl(): URL {
-  const base = new URL(env.SITE_URL);
-  const bp = env.BASE_PATH ?? "";
-  return new URL(bp ? `${bp}/` : "/", base);
-}
 
 export const metadata: Metadata = {
   metadataBase: metadataBaseUrl(),
@@ -55,10 +47,20 @@ type Props = {
   children: ReactNode;
 };
 
-export default function RootLayout({ children }: Props) {
+function resolveInitialLang(nextLocaleCookie: string | undefined): string {
+  return nextLocaleCookie && isLocale(nextLocaleCookie) ? nextLocaleCookie : defaultLocale;
+}
+
+export default async function RootLayout({ children }: Props) {
+  const c = await cookies();
+  const lang = resolveInitialLang(c.get("NEXT_LOCALE")?.value);
+
   return (
-    <html suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+    <html lang={lang} suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <HtmlLangSync />
+        {children}
+      </body>
     </html>
   );
 }

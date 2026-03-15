@@ -1,14 +1,16 @@
 import type { MetadataRoute } from "next";
-import { env } from "@/lib/env";
+import { absoluteUrl } from "@/lib/url";
 
-function withBasePath(path: string): string {
-  const bp = env.BASE_PATH ?? "";
-  return bp ? `${bp}${path}` : path;
-}
+export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: "*", allow: "/" },
-    sitemap: new URL(withBasePath("/sitemap.xml"), env.SITE_URL).toString(),
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
+    sitemap: absoluteUrl("/sitemap.xml"),
   };
 }

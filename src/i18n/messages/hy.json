@@ -4,17 +4,807 @@
     "description": "DeComplex-ը հանրային full-stack ցուցադրական հարթակ է՝ ինժեներական հմտություններն ու ճարտարապետությունը ներկայացնելու համար։ Քանի որ իմ նախկին կոմերցիոն նախագծերը գտնվում են NDA-ի ներքո և չեն կարող ցուցադրվել, այս հարթակը ծառայում է որպես բաց, production-style օրինակ՝ վեբ հավելված, ադմին վահանակ, React Native բջջային հավելված և մասշտաբավորվող backend։"
   },
   "nav": {
-    "home": "Գլխավոր",
-    "mobile": "Բջջային հավելված",
-    "web": "Վեբ հավելված",
+    "overview": "Ընդհանուր",
+    "web": "Վեբ",
+    "admin": "Ադմին",
+    "mobile": "Մոբայլ",
     "backend": "Բեքենդ",
-    "admin": "Ադմին"
+    "infra": "Ինֆրա"
   },
-  "page": {
-    "home": "Գլխավոր էջ հայերեն",
-    "mobile": "mobileapp էջ հայերեն",
-    "web": "webapp էջ հայերեն",
-    "backend": "backend-site էջ հայերեն",
-    "admin": "admin-site էջ հայերեն"
+  "preferences": {
+    "title": "Կարգավորումներ",
+    "language": "Լեզու",
+    "theme": "Թեմա",
+    "light": "Բաց",
+    "dark": "Մուգ",
+    "system": "Համակարգային"
+  },
+  "overview": {
+    "hero": {
+      "title": "Հարթակի ակնարկ",
+      "description": "DeComplex-ը մոդուլային, production մակարդակի հարթակ է, որը ստեղծվել է մասշտաբավորվող ծառայությունների ճարտարապետությունը և ժամանակակից ինժեներական մոտեցումները ցուցադրելու նպատակով։ Այն ներառում է վեբ, մոբայլ, սերվերային և ինֆրաստրուկտուրային բաղադրիչներ, որոնք աշխատում են որպես միասնական համակարգ։"
+    },
+    "architecture": {
+      "title": "Համակարգի ճարտարապետություն",
+      "inputs": {
+        "webApp": "Վեբ հարթակ",
+        "adminConsole": "Ադմինիստրատիվ հարթակ",
+        "mobileSdk": "Մոբայլ հավելված"
+      },
+      "corePlatform": "Հարթակի միջուկային շերտ",
+      "processingEngine": "Մշակման շարժիչ",
+      "processingPills": {
+        "eventProcessing": "Իրադարձությունների մշակում",
+        "stateManagement": "Վիճակի կառավարում",
+        "orchestration": "Օրկեստրացիա"
+      },
+      "outputs": {
+        "apiServices": "API ծառայություններ",
+        "dataLayer": "Տվյալների շերտ"
+      },
+      "infrastructureFoundation": "Ինֆրաստրուկտուրայի հիմք",
+      "infrastructure": {
+        "compute": "Հաշվարկներ",
+        "storage": "Պահեստավորում",
+        "network": "Ցանց",
+        "security": "Անվտանգություն"
+      }
+    },
+    "documentationModules": {
+      "title": "Փաստաթղթավորման մոդուլներ",
+      "cards": {
+        "webApp": {
+          "title": "Վեբ հարթակ",
+          "description": "Հանրային վեբ ինտերֆեյս՝ թափուր աշխատատեղերը դիտելու, մուտք գործելու և դիմումներ ուղարկելու համար։"
+        },
+        "adminConsole": {
+          "title": "Ադմին հարթակ",
+          "description": "Կառավարման ինտերֆեյս ընկերությունների համար՝ օգտատերերի, դերերի, աշխատատեղերի և դիմումների կառավարման համար։"
+        },
+        "mobileSdk": {
+          "title": "Մոբայլ հավելված",
+          "description": "React Native հավելված Expo-ի միջոցով, որը կրկնում է վեբ հարթակի վարքը և հասանելի է որպես վեբ և Android տարբերակ։"
+        },
+        "backendServices": {
+          "title": "Բեքենդ ծառայություններ",
+          "description": "REST API՝ նույնականացման, բիզնես տրամաբանության, տվյալների պահպանման և ինտեգրացիաների համար։"
+        },
+        "infrastructure": {
+          "title": "Ինֆրաստրուկտուրա",
+          "description": "Կոնտեյներացված տեղակայում, CI ավտոմատացում, թեստավորում և հարթակի ամբողջական գործառնական միջավայր։"
+        }
+      }
+    },
+    "metrics": {
+      "title": "Ինժեներական առավելություններ",
+      "items": {
+        "testCoverage": "Unit, Integration և E2E թեստավորում",
+        "containerization": "Ծառայությունների ամբողջական կոնտեյներացում",
+        "ciPipeline": "Ավտոմատացված CI/CD pipeline-ներ",
+        "architecture": "Մոդուլային և մասշտաբավորվող ճարտարապետություն"
+      }
+    }
+  },
+  "webApp": {
+    "page": {
+      "breadcrumb": {
+        "documentation": "Փաստաթղթեր",
+        "current": "Վեբ հարթակ"
+      },
+      "title": "Վեբ հարթակ",
+      "description": "Օգտատիրոջ համար նախատեսված վեբ ինտերֆեյս, որը թույլ է տալիս թեկնածուներին բաց ռեժիմում դիտել թափուր աշխատատեղերը, անցնել նույնականացում՝ մանրամասներին հասանելիություն ստանալու համար, և ուղարկել՝ դիմումներ ուղեկցող նամակով և ռեզյումեով։ Աջակցում է բազմալեզու միջավայրին և սեսիոն նույնականացմանը։"
+    },
+    "keyFeatures": {
+      "title": "Հիմնական հնարավորություններ",
+      "items": {
+        "vacancyBrowsing": {
+          "title": "Աշխատատեղերի դիտում",
+          "description": "Աշխատատեղերի հրապարակային դիտում՝ հիմնական տեղեկատվությամբ առանց նույնականացման։"
+        },
+        "authenticationFlow": {
+          "title": "Նույնականացում",
+          "description": "Գրանցումը և մուտքը պարտադիր են աշխատատեղերի մանրամասներին հասանելիություն ստանալու և դիմում ուղարկելու համար։"
+        },
+        "vacancyDetails": {
+          "title": "Աշխատատեղի մանրամասներ",
+          "description": "Մանրամասն աշխատատեղի էջեր՝ հասանելի միայն նույնականացված օգտատերերի համար։"
+        },
+        "applicationSubmission": {
+          "title": "Դիմումի ուղարկում",
+          "description": "Աշխատատեղին դիմելու հնարավորություն՝ ուղեկցող նամակով և կցված ռեզյումեով։"
+        }
+      }
+    },
+    "techStack": {
+      "title": "Տեխնոլոգիական ստեկ"
+    },
+    "architectureNotes": {
+      "title": "Ճարտարապետական նշումներ",
+      "items": {
+        "componentBased": {
+          "title": "Կոմպոնենտային ճարտարապետություն",
+          "description": "- Մոդուլային UI կոմպոնենտներ՝ պատասխանատվության հստակ բաժանմամբ և վերաօգտագործվող մոտեցումներով։"
+        },
+        "authAndProtectedAccess": {
+          "title": "Նույնականացում և սահմանափակված հասանելիություն",
+          "description": "- Աշխատատեղերի ցուցակը հասանելի է հրապարակային, իսկ մանրամասները և դիմում ուղարկելը պահանջում են նույնականացում։"
+        },
+        "localizationTheming": {
+          "title": "Տեղայնացում և թեմա",
+          "description": "- Բազմալեզու միջավայր՝ next-intl-ով, և թեմայի փոխարկում՝ next-themes-ով։"
+        },
+        "centralizedApi": {
+          "title": "API ինտեգրում",
+          "description": "- Հարցումների և սխալների մշակման միասնական մոտեցում՝ բոլոր օգտատիրական հոսքերում։"
+        },
+        "testingCoverage": {
+          "title": "Թեստերի ծածկույթ",
+          "description": "- Unit, integration և end-to-end թեստերը ծածկում են հիմնական հոսքերը (նույնականացում, աշխատատեղի մանրամասներ, դիմումի ուղարկում)։"
+        }
+      }
+    },
+    "requestFlow": {
+      "title": "Հարցումների հոսք",
+      "nodes": {
+        "webApp": "Վեբ հարթակ",
+        "auth": "Մուտք / Նույնականացում",
+        "vacancies": "Թափուր հաստիքներ",
+        "applications": "Դիմումներ",
+        "apiGateway": "API Gateway",
+        "backendServices": "Բեքենդ ծառայություններ"
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Փոխարկեք local, Docker, demo և production ռեժիմների միջև՝ տեսնելու համար, թե ինչպես է web հավելվածը գործարկվում, նախադիտվում և թողարկվում։",
+      "tags": {
+        "nextjs": "Next.js",
+        "local": "Local",
+        "docker": "Docker",
+        "production": "Production",
+        "node": "Node.js",
+        "devServer": "Dev Server",
+        "compose": "Docker Compose",
+        "webRuntime": "Web Runtime",
+        "demo": "Demo",
+        "preview": "Preview",
+        "staticOutput": "Static Output",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Web հավելվածի տեղային գործարկում սովորական development server workflow-ով։",
+          "lines": {
+            "comment": "Տեղային web development",
+            "output1": "[✓] Development server-ի գործարկում...",
+            "success": "Web հավելվածը պատրաստ է"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Web հավելվածի գործարկում containerized services-ի և runtime dependencies-ի միջոցով։",
+          "lines": {
+            "comment": "Containerized web environment",
+            "output1": "[✓] Docker image-ների հավաքում...",
+            "output2": "[✓] Web runtime-ի գործարկում...",
+            "success": "Docker environment-ը պատրաստ է"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Preview-oriented deployment flow demo և validation environments-ի համար։",
+          "lines": {
+            "comment": "Demo web deployment",
+            "output1": "[✓] Preview build-ի պատրաստում...",
+            "output2": "[✓] Demo target-ի հրապարակում...",
+            "success": "Demo deployment-ը ավարտված է"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Release workflow-ի օգտագործում production web target-ը հավաքելու և տեղակայելու համար։",
+          "lines": {
+            "comment": "Production web deployment",
+            "output1": "[✓] Validation pipeline-ի գործարկում...",
+            "output2": "[✓] Production artifacts-ի հավաքում...",
+            "output3": "[✓] Web target-ի տեղակայում...",
+            "success": "Production deployment-ը ավարտված է"
+          }
+        }
+      }
+    }
+  },
+  "adminConsole": {
+    "page": {
+      "breadcrumb": {
+        "documentation": "Փաստաթղթավորում",
+        "current": "Ադմին հարթակ"
+      },
+      "title": "Ադմին հարթակ",
+      "description": "Կառավարման հարթակ ընկերությունների համար՝ օգտատերերի, դերերի, աշխատանքի հայտարարությունների և թեկնածուների դիմումների կառավարման նպատակով։ Աջակցում է դերային հասանելիություն ընկերության ադմինների և հավաքագրողների համար։"
+    },
+
+    "keyFeatures": {
+      "title": "Հիմնական հնարավորություններ",
+      "items": {
+        "roleManagement": {
+          "title": "Դերային հասանելիություն",
+          "description": "Մուտքի իրավունքների հստակ բաժանում ընկերության ադմինների և հավաքագրողների միջև՝ նախապես սահմանված թույլտվություններով։"
+        },
+        "userManagement": {
+          "title": "Օգտատերերի հաշիվների կառավարում",
+          "description": "Ընկերության օգտատերերի ստեղծում և կառավարում, ներառյալ ադմիններին և հավաքագրողների։"
+        },
+        "vacancyManagement": {
+          "title": "Հայտարարությունների կառավարում",
+          "description": "Աշխատանքի հայտարարությունների ստեղծում, խմբագրում և հրապարակում լիազորված օգտատերերի կողմից։"
+        },
+        "applicationReview": {
+          "title": "Դիմումների դիտարկում",
+          "description": "Թեկնածուների դիմումների դիտարկում՝ կցված ռեզյումեների և ուղեկցող նամակների հասանելիությամբ։"
+        }
+      }
+    },
+
+    "techStack": {
+      "title": "Տեխնոլոգիական ստեկ"
+    },
+
+    "architectureNotes": {
+      "title": "Ճարտարապետական նշումներ",
+      "items": {
+        "roleSeparation": {
+          "title": "Դերերի բաժանում",
+          "description": "- Թույլտվությունների հստակ տարանջատում ընկերության ադմինների և հավաքագրողների միջև։"
+        },
+        "centralizedApi": {
+          "title": "API ինտեգրում",
+          "description": "- Կենտրոնացված API հաղորդակցություն օգտատերերի, հայտարարությունների և դիմումների կառավարման համար։"
+        },
+        "testingCoverage": {
+          "title": "Թեստավորման ամբողջական ծածկույթ",
+          "description": "- Unit, integration և end-to-end թեստերը ծածկում են ադմինիստրատիվ հիմնական հոսքերը։"
+        }
+      }
+    },
+
+    "requestFlow": {
+      "title": "Հարցումների հոսք",
+      "nodes": {
+        "adminConsole": "Ադմին հարթակ",
+        "management": "Օգտատերերի և հաստիքների կառավարում",
+        "apiGateway": "API Gateway",
+        "backendServices": "Բեքենդ ծառայություններ"
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Փոխարկեք local, Docker, demo և production ռեժիմների միջև՝ տեսնելու համար, թե ինչպես է admin panel-ը գործարկվում, նախադիտվում և առաքվում նպատակային միջավայրեր։",
+      "tags": {
+        "react": "React",
+        "vite": "Vite",
+        "local": "Local",
+        "docker": "Docker",
+        "node": "Node.js",
+        "devServer": "Dev Server",
+        "compose": "Docker Compose",
+        "nginx": "Nginx",
+        "demo": "Demo",
+        "preview": "Preview",
+        "dashboard": "Dashboard",
+        "production": "Production",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Admin panel-ի տեղային գործարկում ստանդարտ Vite development workflow-ով։",
+          "lines": {
+            "comment": "Տեղային admin development",
+            "output1": "[✓] Vite dev server-ի գործարկում...",
+            "success": "Admin panel-ը պատրաստ է"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Admin panel-ի գործարկում containerized build և runtime pipeline-ով։",
+          "lines": {
+            "comment": "Containerized admin environment",
+            "output1": "[✓] Docker image-ների հավաքում...",
+            "output2": "[✓] Nginx runtime-ի գործարկում...",
+            "success": "Docker environment-ը պատրաստ է"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Demo deployment flow preview dashboard-ների և validation environments-ի համար։",
+          "lines": {
+            "comment": "Demo admin deployment",
+            "output1": "[✓] Preview dashboard-ի հավաքում...",
+            "output2": "[✓] Demo target-ի հրապարակում...",
+            "success": "Demo deployment-ը ավարտված է"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Release workflow-ի օգտագործում production admin target-ը պատրաստելու և տեղակայելու համար։",
+          "lines": {
+            "comment": "Production admin deployment",
+            "output1": "[✓] Validation pipeline-ի գործարկում...",
+            "output2": "[✓] Release artifacts-ի հավաքում...",
+            "output3": "[✓] Admin target-ի տեղակայում...",
+            "success": "Production deployment-ը ավարտված է"
+          }
+        }
+      }
+    }
+  },
+  "mobileSdk": {
+    "page": {
+      "breadcrumb": {
+        "documentation": "Փաստաթղթավորում",
+        "current": "Մոբայլ հավելված"
+      },
+      "title": "Մոբայլ հավելված",
+      "description": "Մոբայլ հավելված՝ կառուցված React Native-ի և Expo-ի միջոցով։ Հանրային հասանելի է որպես վեբ տարբերակ և Android APK։ iOS-ը աջակցվում է զարգացման/թեստավորման համար Expo Go-ի (QR) միջոցով՝ առանց App Store հրապարակման։ Վարքագիծը համարժեք է վեբ հարթակին՝ հայտարարությունների դիտարկում, նույնականացում և դիմումի ուղարկում ուղեկցող նամակով ու ռեզյումեի կցմամբ։"
+    },
+
+    "keyFeatures": {
+      "title": "Հիմնական հնարավորություններ",
+      "items": {
+        "vacancyBrowsing": {
+          "title": "Հայտարարությունների դիտարկում",
+          "description": "Հայտարարությունների ցուցակը հասանելի է հանրային, իսկ մանրամասներն ու դիմումը պահանջում են նույնականացում։"
+        },
+        "authenticationFlow": {
+          "title": "Նույնականացում",
+          "description": "Գրանցում և մուտք՝ token-սեսիաներով, պաշտպանված գործողություններին հասանելիություն ստանալու համար։"
+        },
+        "applicationSubmission": {
+          "title": "Դիմումի ուղարկում",
+          "description": "Դիմում՝ ուղեկցող նամակով և ռեզյումեի ֆայլի կցմամբ, document picker-ի միջոցով։"
+        },
+        "localSessionStorage": {
+          "title": "Սեսիայի տեղային պահպանում",
+          "description": "Fingerprint-ի և auth token-ների պահպանում AsyncStorage-ի և secure storage-ի միջոցով՝ զգայուն արժեքների համար։"
+        }
+      }
+    },
+
+    "techStack": {
+      "title": "Տեխնոլոգիական ստեկ"
+    },
+
+    "architectureNotes": {
+      "title": "Ճարտարապետական նշումներ",
+      "items": {
+        "expoCrossPlatform": {
+          "title": "Expo-ով կրոս-պլատֆորմային թողարկում",
+          "description": "- Միասնական կոդային բազա՝ վեբ տարբերակի և Android native-ի համար, իսկ iOS-ը հասանելի է dev/test նպատակներով Expo Go-ով։"
+        },
+        "stateAndApi": {
+          "title": "State կառավարում և տվյալների բեռնում",
+          "description": "- Redux Toolkit + RTK Query՝ սերվերի հետ հաղորդակցության և հարցումների lifecycle-ի կառավարման համար։"
+        },
+        "localization": {
+          "title": "Լոկալիզացիա",
+          "description": "- Բազմալեզու UI՝ i18next-ով և սարքի locale-ի աջակցությամբ։"
+        },
+        "testingCoverage": {
+          "title": "Թեստային ծածկույթ",
+          "description": "- Jest unit/integration թեստեր և Playwright end-to-end թեստեր web export-ի համար։"
+        }
+      }
+    },
+
+    "requestFlow": {
+      "title": "Հարցումների հոսք",
+      "nodes": {
+        "mobileApp": "Մոբայլ հավելված",
+        "clientState": "Տեղային վիճակ և սինխրոնացում",
+        "auth": "Մուտք / Նույնականացում",
+        "vacancies": "Թափուր հաստիքներ",
+        "applications": "Դիմումներ",
+        "apiGateway": "API Gateway",
+        "backendServices": "Բեքենդ ծառայություններ"
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Փոխարկեք local, Docker, demo և production ռեժիմների միջև՝ տեսնելու համար, թե ինչպես է mobile մոդուլը գործարկվում, նախադիտվում և թողարկվում։",
+      "tags": {
+        "expo": "Expo",
+        "android": "Android",
+        "local": "Local",
+        "docker": "Docker",
+        "node": "Node.js",
+        "compose": "Docker Compose",
+        "sharedServices": "Shared Services",
+        "demo": "Demo",
+        "preview": "Preview",
+        "apk": "APK",
+        "production": "Production",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Մոբայլ հավելվածի գործարկում անմիջապես տեղային Expo development workflow-ով։",
+          "lines": {
+            "comment": "Տեղային mobile development Expo-ով",
+            "output1": "[✓] Metro bundler-ի գործարկում...",
+            "success": "Development server-ը պատրաստ է"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Mobile-ին առնչվող ծառայությունների գործարկում containerized infrastructure-ի և shared dependencies-ի միջոցով։",
+          "lines": {
+            "comment": "Containerized mobile environment",
+            "output1": "[✓] Docker image-ների հավաքում...",
+            "output2": "[✓] Shared services-ի գործարկում...",
+            "success": "Docker environment-ը պատրաստ է"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Demo-oriented mobile flow preview environments-ի և տարածվող build-երի համար։",
+          "lines": {
+            "comment": "Demo mobile deployment",
+            "output1": "[✓] Preview assets-ի պատրաստում...",
+            "output2": "[✓] Demo build-ի հրապարակում...",
+            "success": "Demo deployment-ը ավարտված է"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Production release workflow-ի օգտագործում՝ mobile target-ը վերջնական միջավայրերի համար պատրաստելու և տեղակայելու նպատակով։",
+          "lines": {
+            "comment": "Production mobile deployment",
+            "output1": "[✓] Validation pipeline-ի գործարկում...",
+            "output2": "[✓] Release artifacts-ի հավաքում...",
+            "output3": "[✓] Production target-ի տեղակայում...",
+            "success": "Production deployment-ը ավարտված է"
+          }
+        }
+      }
+    }
+  },
+  "backendServices": {
+    "page": {
+      "breadcrumb": {
+        "documentation": "Փաստաթղթավորում",
+        "current": "Բեքենդ ծառայություններ"
+      },
+      "title": "Բեքենդ ծառայություններ",
+      "description": "DeComplex հարթակի բեքենդ-API-ը։ Տրամադրում է REST endpoint-ներ, նույնականացում, բիզնես տրամաբանություն և ինտեգրացիաներ՝ Web App-ի, Admin Console-ի և Mobile App-ի համար։"
+    },
+    "keyFeatures": {
+      "title": "Հիմնական հնարավորություններ",
+      "items": {
+        "restApi": {
+          "title": "REST API",
+          "description": "Express-ի վրա կառուցված REST endpoint-ներ՝ հստակ route-երի կառուցվածքով և միատեսակ request/response վարքագծով։"
+        },
+        "auth": {
+          "title": "Նույնականացում և մուտքի իրավունքներ",
+          "description": "JWT-ով նույնականացում և դերային մուտք՝ ընկերությունների, ադմինների և ռեքրութերների համար։"
+        },
+        "databaseMigrations": {
+          "title": "PostgreSQL + միգրացիաներ",
+          "description": "Sequelize մոդելներ, միգրացիաներ և seed-եր՝ վերարտադրելի միջավայրերի և կայուն սխեմայի փոփոխությունների համար։"
+        },
+        "integrationsDocs": {
+          "title": "Ինտեգրացիաներ և API փաստաթղթեր",
+          "description": "Redis՝ cache/օժանդակ պահեստավորման համար, RabbitMQ՝ ասինխրոն առաջադրանքների համար (ըստ ցանկության), Swagger/OpenAPI՝ endpoint-ների փաստաթղթավորման համար։"
+        }
+      }
+    },
+    "techStack": {
+      "title": "Տեխնոլոգիական ստեկ"
+    },
+    "architectureNotes": {
+      "title": "Ճարտարապետական նշումներ",
+      "items": {
+        "modularApi": {
+          "title": "Մոդուլային API",
+          "description": "- Ֆունկցիոնալ մոդուլներ՝ առանձնացված route-երով, վավերացմամբ և service տրամաբանությամբ։"
+        },
+        "dataAccess": {
+          "title": "Տվյալների հասանելիության շերտ",
+          "description": "- Sequelize-ի վրա հիմնված պահպանում՝ բացահայտ միգրացիաներով և կանխատեսելի query մոտեցմամբ։"
+        },
+        "operability": {
+          "title": "Անվտանգություն և դիտարկելիություն",
+          "description": "- Helmet, CORS, վավերացում (Joi) և կառուցվածքային logging (Pino)՝ անվտանգ և վերահսկելի աշխատանքի համար։"
+        }
+      }
+    },
+    "serviceArchitecture": {
+      "title": "Սերվիսների ճարտարապետություն",
+      "boxes": {
+        "apiServer": "API սերվեր (Express)",
+        "authModule": "Auth մոդուլ",
+        "vacanciesModule": "Վականսիաների մոդուլ",
+        "applicationsModule": "Դիմումների մոդուլ",
+        "adminModule": "Ընկերության/օգտատերերի կառավարում",
+        "email": "Email (Nodemailer)"
+      },
+      "mq": "Հաղորդագրությունների հերթ (RabbitMQ, ըստ ցանկության)",
+      "stores": {
+        "postgres": "PostgreSQL (Sequelize)",
+        "redisCache": "Redis (cache/օժանդակ)"
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Փոխարկեք local, Docker, demo և production ռեժիմների միջև՝ տեսնելու համար, թե ինչպես են բեքենդ services-ը և դրանց կախվածությունները գործարկվում և տեղակայվում։",
+      "tags": {
+        "node": "Node.js",
+        "postgresql": "PostgreSQL",
+        "redis": "Redis",
+        "rabbitmq": "RabbitMQ",
+        "migrations": "Migrations",
+        "api": "API",
+        "docker": "Docker",
+        "compose": "Docker Compose",
+        "sharedServices": "Shared Services",
+        "demo": "Demo",
+        "preview": "Preview",
+        "production": "Production",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Backend services-ի տեղային գործարկում migrations-ի և development server workflow-ի հետ։",
+          "lines": {
+            "comment": "Տեղային backend development",
+            "output1": "[✓] Backend API server-ի գործարկում...",
+            "success": "Backend service-ը պատրաստ է"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Backend services-ի և shared runtime dependencies-ի գործարկում container-ների միջոցով։",
+          "lines": {
+            "comment": "Containerized backend environment",
+            "output1": "[✓] Docker image-ների հավաքում...",
+            "output2": "[✓] Databases և brokers-ի գործարկում...",
+            "output3": "[✓] Backend services-ի գործարկում...",
+            "success": "Docker environment-ը պատրաստ է"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Demo deployment flow backend preview և validation environments-ի համար։",
+          "lines": {
+            "comment": "Demo backend deployment",
+            "output1": "[✓] Preview backend target-ի պատրաստում...",
+            "output2": "[✓] Demo services-ի հրապարակում...",
+            "success": "Demo deployment-ը ավարտված է"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Release workflow-ի օգտագործում production backend services-ը հավաքելու, վավերացնելու և տեղակայելու համար։",
+          "lines": {
+            "comment": "Production backend deployment",
+            "output1": "[✓] Validation pipeline-ի գործարկում...",
+            "output2": "[✓] Service artifacts-ի հավաքում...",
+            "output3": "[✓] Backend services-ի տեղակայում...",
+            "success": "Production deployment-ը ավարտված է"
+          }
+        }
+      }
+    }
+  },
+  "infrastructure": {
+    "breadcrumb": {
+      "documentation": "Փաստաթղթավորում",
+      "current": "Ինֆրաստրուկտուրա"
+    },
+    "header": {
+      "title": "Ինֆրաստրուկտուրա",
+      "lead": "DeComplex-ի կոնտեյներային գործարկման միջավայր և CI/CD գործընթաց։ Նկարագրում է ծառայությունների մեկուսացումը, reverse proxy/load balancing-ը, թեստային միջավայրերը և production image-ների ստեղծումը։"
+    },
+    "deploymentModel": {
+      "title": "Դեպլոյմենթի մոդել",
+      "cards": {
+        "containerizedServices": {
+          "title": "Կոնտեյներացված ծառայություններ",
+          "description": "Բոլոր բաղադրիչները աշխատում են մեկուսացված Docker կոնտեյներներով՝ Web App, Admin, Mobile, Backend, PostgreSQL, Redis և RabbitMQ։"
+        },
+        "reverseProxyAndLb": {
+          "title": "Reverse Proxy և բալանսավորում",
+          "description": "Nginx-ի վրա հիմնված մուտքի կետը ուղղորդում է տրաֆիկը ծառայություններին և կարող է բաշխել հարցումները բեքենդի մի քանի ինստանսների միջև։"
+        },
+        "e2eTestEnvironments": {
+          "title": "E2E թեստային միջավայրեր",
+          "description": "Առանձին E2E կոմպոզիցիաները բարձրացնում են թեստային կոնտեյներներ, ստուգում են հիմնական սցենարները (ներառյալ LB վարքը) և ավարտից հետո անջատվում են։"
+        },
+        "automatedDelivery": {
+          "title": "Ավտոմատացված թողարկում",
+          "description": "CI շղթան հավաքում է, անցկացնում unit/integration և E2E թեստերը, ապա հաջող ստուգումից հետո ստեղծում է production image-ներ։"
+        }
+      }
+    },
+    "technologyStack": {
+      "title": "Տեխնոլոգիական ստեկ",
+      "items": {
+        "docker": "Docker",
+        "dockerCompose": "Docker Compose",
+        "nginx": "Nginx (Reverse Proxy / Load Balancer)",
+        "postgres": "PostgreSQL",
+        "redis": "Redis",
+        "rabbitmqOptional": "RabbitMQ (ըստ կարիքի)",
+        "ci": "CI ավտոմատացում (GitHub Actions / Webhooks)",
+        "playwright": "Playwright (E2E)",
+        "jest": "Jest (Unit/Integration)",
+        "vitest": "Vitest (Frontend թեստավորում)"
+      }
+    },
+    "layers": {
+      "title": "Ինֆրաստրուկտուրայի շերտեր",
+      "items": {
+        "edge": {
+          "title": "Edge շերտ",
+          "pills": {
+            "nginx": "Nginx",
+            "reverseProxy": "Reverse Proxy",
+            "loadBalancing": "Բալանսավորում"
+          }
+        },
+        "runtime": {
+          "title": "Runtime շերտ",
+          "pills": {
+            "docker": "Docker",
+            "dockerCompose": "Docker Compose",
+            "serviceNetworking": "Ծառայությունների ցանց"
+          }
+        },
+        "application": {
+          "title": "Կիրառական շերտ",
+          "pills": {
+            "webApp": "Web App",
+            "adminConsole": "Admin Console",
+            "mobileApp": "Mobile App",
+            "backendApi": "Backend API"
+          }
+        },
+        "data": {
+          "title": "Տվյալների շերտ",
+          "pills": {
+            "postgres": "PostgreSQL",
+            "redis": "Redis",
+            "rabbitmqOptional": "RabbitMQ (ըստ կարիքի)"
+          }
+        },
+        "delivery": {
+          "title": "Թողարկման շերտ",
+          "pills": {
+            "ciPipeline": "CI pipeline",
+            "testGates": "Test gates",
+            "prodImages": "Production images"
+          }
+        }
+      }
+    },
+    "securityCompliance": {
+      "title": "Անվտանգություն և օպերացիոն վերահսկողություններ",
+      "items": {
+        "envSecrets": {
+          "title": "Միջավայր և գաղտնիքների կառավարում",
+          "description": "Միջավայր-կախված կարգավորումներ .env ֆայլերով՝ առանձին կարգավորումներով local, test և E2E գործարկումների համար։"
+        },
+        "rbac": {
+          "title": "Դերային հասանելիություն (RBAC)",
+          "description": "Դերերի բաժանում հարթակում (ընկերություն, ադմին, հավաքագրողներ, թեկնածու) և իրավունքների ստուգում բեքենդի կողմից։"
+        },
+        "containerIsolation": {
+          "title": "Կոնտեյներների մեկուսացում",
+          "description": "Ծառայությունները աշխատում են մեկուսացված Docker կոնտեյներներով՝ վերահսկվող ցանցով և կրկնելի runtime վարքագծով։"
+        },
+        "testGates": {
+          "title": "Թեստային գեյթեր CI-ում",
+          "description": "Unit, integration և end-to-end ստուգումները հանդես են գալիս որպես որակի gate-եր՝ production image-ներ ստեղծելուց առաջ։"
+        }
+      }
+    },
+    "deployment": {
+      "title": "How to Run",
+      "description": "Փոխարկեք local, Docker, demo և production ռեժիմների միջև՝ տեսնելու համար, թե ինչպես են infrastructure layers-ը և shared platform services-ը բարձրացվում։",
+      "tags": {
+        "docker": "Docker",
+        "compose": "Docker Compose",
+        "nginx": "Nginx",
+        "observability": "Observability",
+        "networking": "Networking",
+        "services": "Services",
+        "images": "Images",
+        "runtime": "Runtime",
+        "demo": "Demo",
+        "preview": "Preview",
+        "edge": "Edge",
+        "production": "Production",
+        "ci": "CI/CD",
+        "release": "Release"
+      },
+      "modes": {
+        "local": {
+          "label": "Local",
+          "description": "Բազային infrastructure stack-ի տեղային բարձրացում մշակման և ներքին ստուգման համար։",
+          "lines": {
+            "comment": "Տեղային infrastructure bootstrap",
+            "output1": "[✓] Local networks-ի ստեղծում...",
+            "output2": "[✓] Core services-ի գործարկում...",
+            "success": "Infrastructure stack-ը պատրաստ է"
+          }
+        },
+        "docker": {
+          "label": "Docker",
+          "description": "Infrastructure services-ի բարձրացում containerized images-ի և runtime orchestration-ի միջոցով։",
+          "lines": {
+            "comment": "Containerized infrastructure environment",
+            "output1": "[✓] Infrastructure image-ների հավաքում...",
+            "output2": "[✓] Runtime stack-ի գործարկում...",
+            "success": "Docker environment-ը պատրաստ է"
+          }
+        },
+        "demo": {
+          "label": "Demo",
+          "description": "Demo flow preview infrastructure environments-ի և integration validation-ի համար։",
+          "lines": {
+            "comment": "Demo infrastructure deployment",
+            "output1": "[✓] Preview infrastructure-ի պատրաստում...",
+            "output2": "[✓] Edge services-ի հրապարակում...",
+            "success": "Demo deployment-ը ավարտված է"
+          }
+        },
+        "production": {
+          "label": "Production",
+          "description": "Production workflow-ի օգտագործում վերջնական infrastructure stack-ը վավերացնելու և բարձրացնելու համար։",
+          "lines": {
+            "comment": "Production infrastructure deployment",
+            "output1": "[✓] Infrastructure checks-ի գործարկում...",
+            "output2": "[✓] Release images-ի հավաքում...",
+            "output3": "[✓] Production stack-ի կիրառում...",
+            "success": "Production deployment-ը ավարտված է"
+          }
+        }
+      }
+    }
+  },
+  "footer": {
+    "brand": {
+      "name": "DeComplex",
+      "subtitle": "Պլատֆորմի փաստաթղթավորում"
+    },
+    "links": {
+      "aria": "Ֆութերի հղումներ",
+      "live": "Փաստաթղթեր",
+      "github": "GitHub",
+      "api": "API"
+    },
+    "meta": {
+      "copyright": "© 2026 DeComplex",
+      "product": "Enterprise հարթակ",
+      "version": "Docs v1.0.0",
+      "updated": "Թարմացվել է՝ մարտ 2026"
+    }
+  },
+  "common": {
+    "pageResources": {
+      "live": "Live",
+      "github": "GitHub",
+      "apk": "Android APK",
+      "download": "Ներբեռնել",
+      "ariaLinks": "Էջի հղումներ"
+    }
   }
 }

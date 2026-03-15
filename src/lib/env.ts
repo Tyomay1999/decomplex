@@ -21,15 +21,6 @@ function parseBool(value: string | undefined): boolean | undefined {
   throw new Error(`Invalid boolean environment variable value: ${value}`);
 }
 
-// function parseIntSafe(value: string | undefined): number | undefined {
-//     if (!value) return undefined;
-//     const n = Number(value);
-//     if (!Number.isFinite(n) || !Number.isInteger(n)) {
-//         throw new Error(`Invalid integer environment variable value: ${value}`);
-//     }
-//     return n;
-// }
-
 function parseLocale(value: string | undefined): (typeof locales)[number] | undefined {
   if (!value) return undefined;
   const v = value.trim().toLowerCase();
